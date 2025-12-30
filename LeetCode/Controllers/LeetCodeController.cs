@@ -23,5 +23,13 @@ namespace LeetCode.Controllers
             service.Rotate(param.nums, param.k);
             return Ok(param.nums);
         }
+
+        [HttpPost("/WordPattern")]
+        public IActionResult WordPattern([FromBody] WordPatternRequest param)
+        {
+            WordPattern service = new WordPattern();
+            bool result = service.FindWordPattern(param.pattern, param.s);
+            return Ok(result);
+        }
     }
 }
