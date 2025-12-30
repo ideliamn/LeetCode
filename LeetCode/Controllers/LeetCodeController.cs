@@ -39,5 +39,13 @@ namespace LeetCode.Controllers
             bool result = service.IsAnagram(param.s, param.t);
             return Ok(result);
         }
+
+        [HttpPost("/IsIsomorphic")]
+        public IActionResult IsIsomorphic([FromBody] ValidAnagramRequest param)
+        {
+            IsIsomorphic service = new IsIsomorphic();
+            bool result = service.FindIsIsomorphic(param.s, param.t);
+            return Ok(result);
+        }
     }
 }
