@@ -31,5 +31,13 @@ namespace LeetCode.Controllers
             bool result = service.FindWordPattern(param.pattern, param.s);
             return Ok(result);
         }
+
+        [HttpPost("/ValidAnagram")]
+        public IActionResult ValidAnagram([FromBody] ValidAnagramRequest param)
+        {
+            ValidAnagram service = new ValidAnagram();
+            bool result = service.IsAnagram(param.s, param.t);
+            return Ok(result);
+        }
     }
 }
