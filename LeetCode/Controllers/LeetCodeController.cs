@@ -15,5 +15,13 @@ namespace LeetCode.Controllers
             string result = service.ReverseWords(param.s);
             return Ok(result);
         }
+
+        [HttpPost("/RotateArray")]
+        public IActionResult RotateArray([FromBody] RotateArrayRequest param)
+        {
+            RotateArray service = new RotateArray();
+            service.Rotate(param.nums, param.k);
+            return Ok(param.nums);
+        }
     }
 }
