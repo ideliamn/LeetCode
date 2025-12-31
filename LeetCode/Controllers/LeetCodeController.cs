@@ -63,5 +63,12 @@ namespace LeetCode.Controllers
             bool result = service.IsPalindrome(param.s);
             return Ok(result);
         }
+        [HttpPost("/PalindromeNumber")]
+        public IActionResult PalindromeNumber([FromBody] PalindromeNumberRequest param)
+        {
+            PalindromeNumber service = new PalindromeNumber();
+            bool result = service.IsPalindrome(param.x);
+            return Ok(result);
+        }
     }
 }
