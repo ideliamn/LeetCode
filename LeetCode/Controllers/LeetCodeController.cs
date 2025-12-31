@@ -55,5 +55,13 @@ namespace LeetCode.Controllers
             int result = service.RomanToInt(param.s);
             return Ok(result);
         }
+
+        [HttpPost("/ValidPalindrome")]
+        public IActionResult ValidPalindrome([FromBody] ReverseWordInAStringRequest param)
+        {
+            ValidPalindrome service = new ValidPalindrome();
+            bool result = service.IsPalindrome(param.s);
+            return Ok(result);
+        }
     }
 }
