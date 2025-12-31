@@ -77,5 +77,12 @@ namespace LeetCode.Controllers
             int result = service.FindSingleNumber(param.nums);
             return Ok(result);
         }
+        [HttpPost("/RansomNote")]
+        public IActionResult RansomNote([FromBody] RansomNoteRequest param)
+        {
+            RansomNote service = new RansomNote();
+            bool result = service.CanConstruct(param.ransomNote, param.magazine);
+            return Ok(result);
+        }
     }
 }
