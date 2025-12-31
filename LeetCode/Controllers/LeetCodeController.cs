@@ -70,5 +70,12 @@ namespace LeetCode.Controllers
             bool result = service.IsPalindrome(param.x);
             return Ok(result);
         }
+        [HttpPost("/SingleNumber")]
+        public IActionResult SingleNumber([FromBody] SingleNumberRequest param)
+        {
+            SingleNumber service = new SingleNumber();
+            int result = service.FindSingleNumber(param.nums);
+            return Ok(result);
+        }
     }
 }
