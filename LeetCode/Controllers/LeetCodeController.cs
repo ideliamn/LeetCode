@@ -84,5 +84,12 @@ namespace LeetCode.Controllers
             bool result = service.CanConstruct(param.ransomNote, param.magazine);
             return Ok(result);
         }
+        [HttpPost("/PlusOne")]
+        public IActionResult PlusOne([FromBody] SingleNumberRequest param)
+        {
+            PlusOne service = new PlusOne();
+            int[] result = service.FindPlusOne(param.nums);
+            return Ok(result);
+        }
     }
 }
