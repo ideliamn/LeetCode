@@ -47,5 +47,13 @@ namespace LeetCode.Controllers
             bool result = service.FindIsIsomorphic(param.s, param.t);
             return Ok(result);
         }
+
+        [HttpPost("/RomanToInteger")]
+        public IActionResult RomanToInteger([FromBody] ReverseWordInAStringRequest param)
+        {
+            RomanToInteger service = new RomanToInteger();
+            int result = service.RomanToInt(param.s);
+            return Ok(result);
+        }
     }
 }
